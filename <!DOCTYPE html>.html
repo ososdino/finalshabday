@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise for You!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    #surpriseButton {
+      padding: 15px 30px;
+      font-size: 20px;
+      color: white;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #surpriseButton:hover {
+      background-color: #ff3b2f;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #birthdayMessage {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    #birthdayMessage h1 {
+      font-size: 40px;
+      color: #ff6f61;
+    }
+
+    #birthdayMessage p {
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="mainPage">
+    <button id="surpriseButton">Click me if it's your birthday!</button>
+  </div>
+
+  <div id="birthdayMessage" class="hidden">
+    <h1>Happy Birthday! 🎉</h1>
+    <p>
+      Hey [Her Name],<br><br>
+      I just wanted to take a moment to tell you how special you are to me. 
+      You light up my world with your smile, and I feel so lucky to know you. 
+      On your special day, I hope all your dreams come true because you deserve 
+      nothing but the best. Happy birthday, and I can't wait to celebrate many 
+      more with you! 💖
+    </p>
+  </div>
+
+  <script>
+    const surpriseButton = document.getElementById("surpriseButton");
+    const mainPage = document.getElementById("mainPage");
+    const birthdayMessage = document.getElementById("birthdayMessage");
+
+    surpriseButton.addEventListener("click", () => {
+      mainPage.classList.add("hidden");
+      birthdayMessage.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
