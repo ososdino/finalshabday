@@ -3,22 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surprise for You!</title>
+  <title>Birthday Surprise</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: white;
+      height: 100vh;
+      background-color: purple;
       font-family: Arial, sans-serif;
+      text-align: center;
     }
 
-    #surpriseButton {
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .penguin {
+      font-size: 10rem;
+      margin-bottom: 20px;
+    }
+
+    .button {
       padding: 15px 30px;
-      font-size: 20px;
-      color: white;
+      font-size: 1.5rem;
+      color: grey;
       background-color: #ff6f61;
       border: none;
       border-radius: 10px;
@@ -26,7 +38,7 @@
       transition: background-color 0.3s ease;
     }
 
-    #surpriseButton:hover {
+    .button:hover {
       background-color: #ff3b2f;
     }
 
@@ -34,50 +46,35 @@
       display: none;
     }
 
-    #birthdayMessage {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    #birthdayMessage h1 {
-      font-size: 40px;
-      color: #ff6f61;
-    }
-
-    #birthdayMessage p {
-      font-size: 20px;
+    .birthday-message {
+      font-size: 1.5rem;
       color: #333;
     }
   </style>
 </head>
 <body>
-  <div id="mainPage">
-    <button id="surpriseButton">Click me if it's your birthday!</button>
+  <div id="front-page">
+    <div class="penguin">🐧</div>
+    <button class="button" onclick="redirectToMessage()">Click me if it's your birthday!</button>
   </div>
 
-  <div id="birthdayMessage" class="hidden">
-    <h1>Happy Birthday! 🎉</h1>
-    <p>
-      Hey [Her Name],<br><br>
-      I just wanted to take a moment to tell you how special you are to me. 
-      You light up my world with your smile, and I feel so lucky to know you. 
-      On your special day, I hope all your dreams come true because you deserve 
-      nothing but the best. Happy birthday, and I can't wait to celebrate many 
-      more with you! 💖
+  <div id="birthday-page" class="hidden">
+    <h1>🎉 Happy Birthday! 🎉</h1>
+    <p class="birthday-message">
+      Happy Birthday! 🎂🎈<br>
+      I just wanted to take a moment to tell you how amazing you are.<br>
+      You mean so much to me, and I really like you! 💖<br>
+      I hope your day is as special as you are. 😊
     </p>
   </div>
 
   <script>
-    const surpriseButton = document.getElementById("surpriseButton");
-    const mainPage = document.getElementById("mainPage");
-    const birthdayMessage = document.getElementById("birthdayMessage");
-
-    surpriseButton.addEventListener("click", () => {
-      mainPage.classList.add("hidden");
-      birthdayMessage.classList.remove("hidden");
-    });
+    function redirectToMessage() {
+      // Hide the front page
+      document.getElementById('front-page').style.display = 'none';
+      // Show the birthday message page
+      document.getElementById('birthday-page').style.display = 'block';
+    }
   </script>
 </body>
 </html>
