@@ -6,86 +6,97 @@
   <title>Surprise for Sharen Graceanne</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 0;
-      background-color: white;
-    }
-    .verification-page, .birthday-page {
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      flex-direction: column;
     }
+
+    .page {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .page1 {
+      background-color: white;
+    }
+
+    .page2 {
+      background-color: red;
+      color: white;
+      display: none;
+    }
+
+    .page3 {
+      background-color: pink;
+      color: black;
+      display: none;
+    }
+
     h1 {
       font-size: 3rem;
-      color: #333;
-    }
-    .verification-page h1 {
       margin-bottom: 20px;
     }
-    .birthday-page h1 {
-      color: #6a1b9a; /* Purple color */
-    }
-    .button {
-      background-color: #6a1b9a; /* Purple color */
-      color: white;
-      padding: 15px 30px;
+
+    .buttons button {
+      padding: 10px 20px;
       font-size: 1.2rem;
-      border: none;
-      border-radius: 5px;
+      margin: 10px;
       cursor: pointer;
-      text-decoration: none;
     }
-    .button:hover {
-      background-color: #7c4dff; /* Lighter purple */
-    }
+
     .sweet-notes {
-      background-color: #f3e5f5; /* Light purple background */
+      background-color: white;
       padding: 20px;
       border-radius: 10px;
       max-width: 500px;
       margin: 20px auto;
-      font-size: 1.1rem;
-      color: #333;
-    }
-    audio {
-      display: none; /* Hide the audio player */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
-
-  <!-- Verification Page -->
-  <div class="verification-page" id="verification-page">
+  <!-- Page 1: Verification -->
+  <div class="page page1">
     <h1>Verification</h1>
-    <p>If your name is Sharen Graceanne and it's your birthday, please click here:</p>
-    <button class="button" onclick="redirectToBirthdayPage()">Click Here</button>
+    <p>Are you Sharen Graceanne?</p>
+    <div class="buttons">
+      <button onclick="showPage2()">No</button>
+      <button onclick="showPage3()">Yes</button>
+    </div>
   </div>
 
-  <!-- Birthday Page -->
-  <div class="birthday-page" id="birthday-page" style="display: none;">
+  <!-- Page 2: Go Away -->
+  <div class="page page2">
+    <h1>Fu** off mate 🤬❌, this is only for Sharen Graceanne 🐧🥰.</h1>
+  </div>
+
+  <!-- Page 3: Birthday Surprise -->
+  <div class="page page3">
     <h1>Happy 20th Birthday Shaa!</h1>
     <div class="sweet-notes">
-      <p>Happy birthday to the most beautiful girl I have ever known, hehe 🤓. Wishing you all the best, semoga all your wishes and dreams bisa tercapai, sehat selalu, cantik terus, diberkati Tuhan, and don't ever stop smiling yaa 😘. Getting to know you over the past month has made me yakin that you will become someone successful and accomplished. Jadi please, never give up on anything you want to achieve 💪🏻🔥. I will always be here anytime to help you with anything you need 😙. Thank you for being the person you are. I am so glad to have known you because you are the most beautiful, funniest, hardworking, and coolest girl I have ever known in my life—no lies 🤓, hehe. So wait for me yaaa!! I’ll be back soon. 🐧 💕</p>
+      <p>Happy birthday to the most beautiful girl I have ever known, hehe 🤓. Wishing you all the best, semoga all your wishes and dreams bisa tercapai, sehat selalu, cantik terus, diberkati Tuhan, and don't ever stop smiling yaa 😘. Kepala dua may seem scary at first, but i am very sure you will be fine, i yakin that you will become someone successful and accomplished. Jadi please, never give up on anything you want to achieve 💪🏻🔥. I will always be here anytime to help you with anything you need 😙. Thank you for being the person you are. I am so glad to have known you because you are the most beautiful, funniest, hardworking, and coolest girl I have ever known in my life—no lies 🤓, hehe. Today is exactly sebulan kurang 1 hari since the day i first texted you, ever since that day my smile has never left my face hehe 🤓🤪. Getting to know you and Talking to you have been so special and pleasent. I can't wait to know you more and create memories together hehehe, So wait for me yaaa!! I’ll be back soon. 🐧 💕 From: ososdino </p>
     </div>
-    <!-- Audio for Tsunami by Niki -->
-    <audio id="birthday-song" autoplay loop>
-      <source src="https://www.youtube.com/watch?v=hNprpOmnzvk" type="audio/mpeg">
-    </audio>
   </div>
 
   <script>
-    function redirectToBirthdayPage() {
-      // Hide verification page and show birthday page
-      document.getElementById('verification-page').style.display = 'none';
-      document.getElementById('birthday-page').style.display = 'flex';
+    function showPage2() {
+      document.querySelector('.page1').style.display = 'none';
+      document.querySelector('.page2').style.display = 'flex';
+    }
 
-      // Play the song
-      const audio = document.getElementById('birthday-song');
-      audio.play();
+    function showPage3() {
+      document.querySelector('.page1').style.display = 'none';
+      document.querySelector('.page3').style.display = 'flex';
     }
   </script>
 </body>
