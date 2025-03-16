@@ -12,95 +12,80 @@
       padding: 0;
       background-color: white;
     }
-
-    /* First Page Styles */
-    #verification-page {
+    .verification-page, .birthday-page {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
-
-    #verification-page h1 {
+    h1 {
       font-size: 3rem;
       color: #333;
     }
-
-    #verification-page p {
-      font-size: 1.5rem;
-      color: #555;
-      margin: 20px 0;
-    }
-
-    #verification-page button {
-      background-color: #800080; /* Purple */
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    #verification-page button:hover {
-      background-color: #6a006a; /* Darker Purple */
-    }
-
-    /* Second Page Styles */
-    #birthday-page {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #birthday-page h1 {
-      font-size: 4rem;
-      color: #ff69b4; /* Pink */
+    .verification-page h1 {
       margin-bottom: 20px;
     }
-
-    #birthday-page .sweet-notes {
-      background-color: #fff0f5; /* Light Pink */
+    .birthday-page h1 {
+      color: #6a1b9a; /* Purple color */
+    }
+    .button {
+      background-color: #6a1b9a; /* Purple color */
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #7c4dff; /* Lighter purple */
+    }
+    .sweet-notes {
+      background-color: #f3e5f5; /* Light purple background */
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       max-width: 500px;
-      margin: 0 auto;
-    }
-
-    #birthday-page .sweet-notes p {
-      font-size: 1.5rem;
+      margin: 20px auto;
+      font-size: 1.1rem;
       color: #333;
-      line-height: 1.6;
+    }
+    audio {
+      display: none; /* Hide the audio player */
     }
   </style>
 </head>
 <body>
 
-  <!-- First Page: Verification -->
-  <div id="verification-page">
+  <!-- Verification Page -->
+  <div class="verification-page" id="verification-page">
     <h1>Verification</h1>
-    <p>If your name is Sharen Graceanne, please click here:</p>
-    <button onclick="showBirthdayPage()">Click Here</button>
+    <p>If your name is Sharen Graceanne and it's your birthday, please click here:</p>
+    <button class="button" onclick="redirectToBirthdayPage()">Click Here</button>
   </div>
 
-  <!-- Second Page: Birthday Surprise -->
-  <div id="birthday-page">
+  <!-- Birthday Page -->
+  <div class="birthday-page" id="birthday-page" style="display: none;">
     <h1>Happy 20th Birthday Shaa!</h1>
     <div class="sweet-notes">
-      <p>Happy Birthday to the most amazing person in the world! 🎉🎂<br>
-      Wishing you all the love, joy, and success in life. You deserve the best! 💜</p>
+      <p>Happy birthday to the most beautiful girl I have ever known, hehe 🤓. Wishing you all the best, semoga all your wishes and dreams bisa tercapai, sehat selalu, cantik terus, diberkati Tuhan, and don't ever stop smiling yaa 😘. Getting to know you over the past month has made me yakin that you will become someone successful and accomplished. Jadi please, never give up on anything you want to achieve 💪🏻🔥. I will always be here anytime to help you with anything you need 😙. Thank you for being the person you are. I am so glad to have known you because you are the most beautiful, funniest, hardworking, and coolest girl I have ever known in my life—no lies 🤓, hehe. So wait for me yaaa!! I’ll be back soon. 🐧 💕</p>
     </div>
+    <!-- Audio for Tsunami by Niki -->
+    <audio id="birthday-song" autoplay loop>
+      <source src="https://www.youtube.com/watch?v=hNprpOmnzvk" type="audio/mpeg">
+    </audio>
   </div>
 
   <script>
-    // JavaScript to switch pages
-    function showBirthdayPage() {
+    function redirectToBirthdayPage() {
+      // Hide verification page and show birthday page
       document.getElementById('verification-page').style.display = 'none';
       document.getElementById('birthday-page').style.display = 'flex';
+
+      // Play the song
+      const audio = document.getElementById('birthday-song');
+      audio.play();
     }
   </script>
 </body>
