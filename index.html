@@ -3,77 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Surprise</title>
+  <title>Surprise for Sharen Graceanne</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      text-align: center;
       margin: 0;
       padding: 0;
+      background-color: white;
+    }
+
+    /* First Page Styles */
+    #verification-page {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: purple;
-      font-family: Arial, sans-serif;
-      text-align: center;
     }
 
-    h1 {
+    #verification-page h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
+      color: #333;
     }
 
-    .penguin {
-      font-size: 10rem;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      padding: 15px 30px;
+    #verification-page p {
       font-size: 1.5rem;
-      color: grey;
-      background-color: #ff6f61;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    #verification-page button {
+      background-color: #800080; /* Purple */
+      color: white;
       border: none;
-      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      border-radius: 5px;
     }
 
-    .button:hover {
-      background-color: #ff3b2f;
+    #verification-page button:hover {
+      background-color: #6a006a; /* Darker Purple */
     }
 
-    .hidden {
+    /* Second Page Styles */
+    #birthday-page {
       display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    .birthday-message {
+    #birthday-page h1 {
+      font-size: 4rem;
+      color: #ff69b4; /* Pink */
+      margin-bottom: 20px;
+    }
+
+    #birthday-page .sweet-notes {
+      background-color: #fff0f5; /* Light Pink */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #birthday-page .sweet-notes p {
       font-size: 1.5rem;
       color: #333;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <div id="front-page">
-    <div class="penguin">🐧</div>
-    <button class="button" onclick="redirectToMessage()">Click me if it's your birthday!</button>
+
+  <!-- First Page: Verification -->
+  <div id="verification-page">
+    <h1>Verification</h1>
+    <p>If your name is Sharen Graceanne, please click here:</p>
+    <button onclick="showBirthdayPage()">Click Here</button>
   </div>
 
-  <div id="birthday-page" class="hidden">
-    <h1>🎉 Happy Birthday! 🎉</h1>
-    <p class="birthday-message">
-      Happy Birthday! 🎂🎈<br>
-      I just wanted to take a moment to tell you how amazing you are.<br>
-      You mean so much to me, and I really like you! 💖<br>
-      I hope your day is as special as you are. 😊
-    </p>
+  <!-- Second Page: Birthday Surprise -->
+  <div id="birthday-page">
+    <h1>Happy 20th Birthday Shaa!</h1>
+    <div class="sweet-notes">
+      <p>Happy Birthday to the most amazing person in the world! 🎉🎂<br>
+      Wishing you all the love, joy, and success in life. You deserve the best! 💜</p>
+    </div>
   </div>
 
   <script>
-    function redirectToMessage() {
-      // Hide the front page
-      document.getElementById('front-page').style.display = 'none';
-      // Show the birthday message page
-      document.getElementById('birthday-page').style.display = 'block';
+    // JavaScript to switch pages
+    function showBirthdayPage() {
+      document.getElementById('verification-page').style.display = 'none';
+      document.getElementById('birthday-page').style.display = 'flex';
     }
   </script>
 </body>
